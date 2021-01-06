@@ -3,7 +3,6 @@
 # @Author : Jclian91
 # @File : single_ckpt_2_pb.py
 # @Place : Yangpu, Shanghai
-# -*- coding: utf-8 -*-
 import tensorflow as tf
 from tensorflow.python import saved_model
 

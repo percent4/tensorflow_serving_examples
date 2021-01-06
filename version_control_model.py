@@ -3,7 +3,6 @@
 # @Author : Jclian91
 # @File : version_control_model.py
 # @Place : Yangpu, Shanghai
-# -*- coding: utf-8 -*-
 import tensorflow as tf
 
 # 第一个模型
