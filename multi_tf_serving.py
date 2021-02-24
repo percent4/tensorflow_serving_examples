@@ -11,7 +11,7 @@ def model_predict(model_name):
     t = 4.0
     tensor = {"instances": [{"t": t}]}
 
-    url = "http://192.168.1.193:8551/v1/models/{}:predict".format(model_name)
+    url = "http://192.168.4.193:8511/v1/models/{}:predict".format(model_name)
     req = requests.post(url, json=tensor)
     if req.status_code == 200:
         z = req.json()['predictions'][0]

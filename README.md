@@ -47,3 +47,6 @@ curl --location --request POST 'http://192.168.1.193:8551/v1/models/add/versions
     ]
 }
 ```
+
+### 使用Prometheus进行服务监控
+

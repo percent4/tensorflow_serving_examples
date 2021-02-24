@@ -1,0 +1,27 @@
+version: "3.4"
+services:
+  model_serving:
+      image: tensorflow/serving:1.14.0
+      container_name: model_serving
+      ports:
+        - "8511:8501"
+      restart: always
+      networks:
+        - tf_net
+      volumes:
+        - ./pb_models:/models
+      command: --model_config_file=/models/models.config && --monitoring_config_file=/models/monitoring_config.txt
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    restart: always
+    container_name: prometheus
+    networks:
+      - tf_net
+    volumes:
+      - ./pb_models/prometheus.yml:/etc/prometheus/prometheus.yml
+
+networks:
+  tf_net:
