@@ -50,3 +50,11 @@ curl --location --request POST 'http://192.168.1.193:8551/v1/models/add/versions
 
 ### 使用Prometheus进行服务监控
 
+1. Prothemus的配置文件位于./pb_models/prometheus.yml; Tensorflow/Serving支持Prothemus的配置文件位于pb_models/monitoring_config.txt;
+2. 启动服务：
+
+```
+docker-compose up -d
+```
+
+3. 在浏览器中输入http://IP:9090, 选择Graph, 配置好Expression（比如:tensorflow:core:graph_run_time_usecs_histogram_count，调用次数）即可使用。
